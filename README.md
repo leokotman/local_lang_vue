@@ -1,4 +1,4 @@
-# weborigo_lang_vue
+# local_lang_vue
 App for learning Serbian-English language:
 random language is shown,
 answered words add +1 point to statistics & are hidden from showing again.

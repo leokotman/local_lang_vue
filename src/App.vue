@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img :src="logo" alt="weborigo logo" class="main_logo" height="72" />
+    <header>
+      <img :src="logo" alt="language app logo" class="main_logo" height="240" @click="reloadPage" />
+    </header>
     <section class="card_block">
       <WordCard
         :shownWord="shownWord"
@@ -28,8 +30,8 @@
 <script>
 import WordCard from "./components/WordCard.vue";
 import data from "./data.json"; //languages data
-import logoSm from "./assets/logo/weborigo_logo.png";
-import logoBig from "./assets/logo/weborigo_logo_big.png"; //logo for large resolutions
+import logo from "./assets/logo/logo_big.png";
+import logoSm from "./assets/logo/logo_sm.png";
 
 export default {
   name: "App",
@@ -38,7 +40,7 @@ export default {
       words: [...data.words],
       shownWord: {},
       wordsToLearn: [],
-      logo: logoSm,
+      logo: logo,
       windowWidth: document.documentElement.clientWidth,
     };
   },
@@ -61,9 +63,9 @@ export default {
 
     // Check for logo quality change
     windowWidth(newNumber) {
-      if (newNumber > 1920) {
-        this.logo = logoBig;
-      } else if (newNumber < 1920) {
+      if (newNumber >= 1280) {
+        this.logo = logo;
+      } else if (newNumber < 1280) {
         this.logo = logoSm;
       }
     },
@@ -84,6 +86,10 @@ export default {
       } else {
         return (this.shownWord = {});
       }
+    },
+
+    reloadPage() {
+      window.location.reload();
     },
 
     // get a random word from data to show
@@ -108,7 +114,7 @@ export default {
         )
       ) {
         setTimeout(() => {
-          window.location.reload();
+          this.reloadPage();
         }, 2000);
       } else {
         return;
@@ -160,8 +166,19 @@ export default {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
 }
+header {
+  font-size: 0;
+  width: 66.6%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+header:hover {
+  cursor: pointer;
+}
 .main_logo {
-  padding: 3.125rem 0;
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
 }
 .points {
   color: #ff6700;
@@ -178,7 +195,8 @@ export default {
 
 /* Adaptive & responsive design for 1920px, 1280px, 380px */
 @media screen and (min-width: 1280px) {
-  .card_block {
+  .card_block,
+  header {
     width: 80%;
   }
 }
@@ -187,11 +205,15 @@ export default {
     justify-content: center;
     width: 66%;
   }
+  header {
+    width: 66%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
   .main_logo {
-    height: 50px;
+    height: 150px;
+    width: fit-content;
   }
   .card_block {
     padding: 3.125rem 0 2.25rem;
@@ -202,11 +224,11 @@ export default {
   .points {
     font-size: 1rem;
   }
+  header {
+    width: 92%;
+  }
 }
 @media screen and (max-width: 660px) {
-  .main_logo {
-    padding: 2.7rem 0 1.875rem;
-  }
   .card_block {
     background-image: none;
     border-radius: 40px;
@@ -219,9 +241,11 @@ export default {
     padding: 1.5rem 0 1.25rem;
     width: 91.5%;
   }
+  header {
+    width: 91.5%;
+  }
   .main_logo {
-    max-width: 100%;
-    height: auto;
+    max-width: 100vw;
   }
 }
 </style>

@@ -145,10 +145,12 @@ input {
 /* Adaptive & responsive design for 1920px, 1280px, 380px */
 @media screen and (max-width: 1280px) {
   .image_block {
-    height: 266px;
+    height: 300px;
+    width: 400px;
   }
   img {
-    width: 400px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
   }
   h2 {
