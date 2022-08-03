@@ -1,0 +1,79 @@
+{
+    "words": [
+        {
+            "id": 0,
+            "Serbian": "srećan",
+            "English": "happy",
+            "url":"/happy.jpg",
+            "answered": false
+        },
+        {
+            "id": 1,
+            "Serbian": "lijepo",
+            "English": "nice",
+            "url":"/nice.jpg",
+            "answered": false
+        },
+        {
+            "id": 2,
+            "Serbian": "prijatelju",
+            "English": "friend",
+            "url":"/friend.jpg",
+            "answered": false
+        },{
+            "id": 3,
+            "Serbian": "eksplozija",
+            "English": "explosion",
+            "url":"/explosion.jpg",
+            "answered": false
+        },{
+            "id": 4,
+            "Serbian": "šargarepa",
+            "English": "carrot",
+            "url":"/carrot.jpg",
+            "answered": false
+        },{
+            "id": 5,
+            "Serbian": "auto",
+            "English": "car",
+            "url":"/car.jpg",
+            "answered": false
+        },{
+            "id": 6,
+            "Serbian": "vojnik",
+            "English": "soldier",
+            "url":"/soldier.jpg",
+            "answered": false
+        },{
+            "id": 7,
+            "Serbian": "strah",
+            "English": "fear",
+            "url":"/fear.jpg",
+            "answered": false
+        },{
+            "id": 8,
+            "Serbian": "relativnost",
+            "English": "relativity",
+            "url":"/relativity.jpg",
+            "answered": false
+        },{
+            "id": 9,
+            "Serbian": "knjiga",
+            "English": "book",
+            "url":"/book.jpg",
+            "answered": false
+        },{
+            "id": 10,
+            "Serbian": "Zemlja",
+            "English": "Earth",
+            "url":"/earth.jpg",
+            "answered": false
+        },{
+            "id": 11,
+            "Serbian": "ograničenje brzine",
+            "English": "speed limit",
+            "url":"/speed.jpg",
+            "answered": false
+        }
+    ]
+}
